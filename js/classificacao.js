@@ -1,50 +1,50 @@
 'use strict'
 
-async function postBanda(banda){
-    const url = `http://localhost:8080/v1/controle-musicas/banda`
+async function postClassificacao(classificacao){
+    const url = `http://localhost:8080/v1/controle-musicas/classificacao`
     const options = {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify(banda)
+        body: JSON.stringify(classificacao)
     }
     const response = await fetch(url, options)
     return response.ok
 
 }
 
-export async function getListarBanda(){
-    const url = 'http://localhost:8080/v1/controle-musicas/banda'
+export async function getListarClassificacao(){
+    const url = 'http://localhost:8080/v1/controle-musicas/classificacao'
     const response = await fetch(url)
     const data = await response.json()
     // console.log(data)
     return data
 }
 
-export async function getBuscarBanda(id){
-    const url = `http://localhost:8080/v1/controle-musicas/banda/${id}`
+export async function getBuscarClassificacao(id){
+    const url = `http://localhost:8080/v1/controle-musicas/classificacao/${id}`
     const response = await fetch(url)
     const data = await response.json()
     // console.log(data)
     return data
 }
 
-async function putBanda(id, banda){
-    const url = `http://localhost:8080/v1/controle-musicas/banda/${id}`
+async function putClassificacao(id, classificacao){
+    const url = `http://localhost:8080/v1/controle-musicas/classificacao/${id}`
     const options = {
         method: 'PUT',
         headers: {
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify(banda)
+        body: JSON.stringify(classificacao)
     }
     const response = await fetch(url, options)
     return response.ok
 }
 
-async function deleteBanda(id){
-    const url = `http://localhost:8080/v1/controle-musicas/banda/${id}`
+async function deleteClassificacao(id){
+    const url = `http://localhost:8080/v1/controle-musicas/classificacao/${id}`
     const options = {
         method: 'DELETE'
     }
@@ -52,14 +52,10 @@ async function deleteBanda(id){
     return response.ok
 }
 
-const banda = {
-    "nome": "Banda do Leonid",
-    "membros": "teste",
-    "data_criacao": "2008-02-15"
+const classificacao = {
+    "nome": "Gabriel"
 }
 
 const update = {
-    "nome": "Banda do Gabriel",
-    "membros": "teste",
-    "data_criacao": "2008-02-15"
+    "nome": "Personalizada",
 }
